@@ -1,0 +1,143 @@
+{
+  "files": {
+    ".gitattributes": {
+      "bytes": 88,
+      "sha256": "462b5028a0c246aa6d15e34c5e9ffd4250401bb7975102202db947b641c9bbb1"
+    },
+    ".github/workflows/ci.yml": {
+      "bytes": 1649,
+      "sha256": "4f719b99fdecab19b792293e8e4d812230ccc2701c5d9a1efa5ab81cd5bc45aa"
+    },
+    ".gitignore": {
+      "bytes": 175,
+      "sha256": "919b24daced1cd3f361dfccabbfe301173f2e50f837862b02cdc3b8b5757bd82"
+    },
+    "CONTRIBUTING.md": {
+      "bytes": 2081,
+      "sha256": "7934b64bdc8eae39221b994b00a1e3363caca5251ad5283a4d7f6a04a0971cbb"
+    },
+    "LICENSE": {
+      "bytes": 1085,
+      "sha256": "b9c18afd3f7b67910fef3edf6575069f97ff7926a683a8410adb36eac61aa5c7"
+    },
+    "README.md": {
+      "bytes": 8397,
+      "sha256": "37d3783d23211838f8bbe728e23972333389e9ebd9c488713032c6dd0a913379"
+    },
+    "VERSION": {
+      "bytes": 11,
+      "sha256": "92c6ee1c9ce8a3f27cea22aa97eafba4a9cb27f62c08f3ccb484b81c053050c4"
+    },
+    "docs/QA.md": {
+      "bytes": 2056,
+      "sha256": "b5fecefca737bb125c051e8e76c072a900295f4f3bf817230ab2b2df2c3664f6"
+    },
+    "docs/VALIDATION.md": {
+      "bytes": 2544,
+      "sha256": "cca57d47b4261a81faa4c2a20a6a7c136c55cdbd131807d418a7161c04496186"
+    },
+    "docs/migration.md": {
+      "bytes": 2620,
+      "sha256": "771640df8431affefcfcd6a395dad26d5c68e793f84d74b30edeea1c357ef89e"
+    },
+    "docs/modules.md": {
+      "bytes": 2138,
+      "sha256": "60c77ae55efbde7cdfc1a709349fed6b3701a54207baf3c2fbcf75e57d7a2687"
+    },
+    "docs/provenance.md": {
+      "bytes": 3165,
+      "sha256": "de0be6e726240757c0c9a5386afa76e4b836f9cba2d73248f509b3cb5b3dad81"
+    },
+    "docs/release.md": {
+      "bytes": 7170,
+      "sha256": "a5c52a49160f8301dbd736a52a639c75f0b11405a15571ebbc1bb90a354d6da0"
+    },
+    "docs/security.md": {
+      "bytes": 1236,
+      "sha256": "5600a37c7846d0a50cb222c56f424d9555d59002d3627f24c54c7363a28b4f50"
+    },
+    "release-allowlist.json": {
+      "bytes": 912,
+      "sha256": "8b97fa0e7c196199ce0b7617b45a4237612bb4b0f62c5f4ec388f74c931aaab8"
+    },
+    "release.py": {
+      "bytes": 2965,
+      "sha256": "11abe403dec26e14c2e534d1402cbf3db9b9869e216cf76abc29f8b012d5cfa8"
+    },
+    "starter.py": {
+      "bytes": 16072,
+      "sha256": "2ac05208bcd18f1124db7222f541bc417589c11a980f98067eaa0e7cf49946bd"
+    },
+    "templates/.gitignore": {
+      "bytes": 52,
+      "sha256": "a5eb5c485c7867d3fdf006d05e8aac2e1f66e05ff2cc7758232f7ac3406e2c91"
+    },
+    "templates/AGENTS.md": {
+      "bytes": 1578,
+      "sha256": "60dcce69d59a1eba9c6b23cf303017c9a59b4122fe30c174b114dac56e2ce519"
+    },
+    "templates/FIRST_USE.md": {
+      "bytes": 2320,
+      "sha256": "9c00c6c09aab1549bb0fbfe17670b19125ad13de5baadd1bfc44820f5151d36f"
+    },
+    "templates/personal/README.md": {
+      "bytes": 229,
+      "sha256": "bff8dc9afb07d357aec17069810ca7634935218dc841925a535764d0f6deaf44"
+    },
+    "templates/private/overlay.md": {
+      "bytes": 275,
+      "sha256": "a96c7ffa73b7b4ea64e2e09edf8243277273098f0f1ef4537f9ec6fc40b79e17"
+    },
+    "templates/profile/style.md": {
+      "bytes": 1918,
+      "sha256": "31448189dda087c6bc303f5d32beb81bdde69fa2a0ba705ef7ca70772c6587d9"
+    },
+    "templates/recovery/checkpoint.md": {
+      "bytes": 264,
+      "sha256": "a0cf8bd9e2882eac09a91488c381f690b6b5bc328dae8ddc9eca360d7d494e79"
+    },
+    "templates/standards/change-recovery.md": {
+      "bytes": 1091,
+      "sha256": "e0477e1678be90cc416bc35fb69a2b0cdb7880c607588fc53a1f275936b38175"
+    },
+    "templates/standards/closeout.md": {
+      "bytes": 1140,
+      "sha256": "0abf0e650bed3db09b152689b55ad73f6ea80ab44391a266f93771faaac12511"
+    },
+    "templates/standards/research-evidence.md": {
+      "bytes": 1071,
+      "sha256": "8776370cd3ecdacf12b3e4c4350b2d15c1d6c5756c25dc2c4ff5144ead7de2c9"
+    },
+    "templates/standards/storage.md": {
+      "bytes": 955,
+      "sha256": "f51d68c8df392e51d5124fcf3c0b1ee0b2632197ccdd1b5b484e2b8e6c90071f"
+    },
+    "templates/standards/task-flow.md": {
+      "bytes": 1084,
+      "sha256": "5b87c10bb277efd4c4c48fe59f5112d9d69946dc75588798d3d5207ae41ffdfc"
+    },
+    "templates/standards/tool-adoption.md": {
+      "bytes": 1081,
+      "sha256": "9f28973212663a6fe6e25eecd8b30f0392e33eff46be8859200f409cc3668e4c"
+    },
+    "templates/task.md": {
+      "bytes": 283,
+      "sha256": "7e7ceb79b2512bd9234ddef06ebb2c12ad734d0d10903ecd5f6edcf41dcc80d7"
+    },
+    "templates/workspace/README.md": {
+      "bytes": 282,
+      "sha256": "25171d34a17767bc6bb1fddec1229662b25848c21207e5f16288e0b3b8753a35"
+    },
+    "tests/acceptance.py": {
+      "bytes": 7508,
+      "sha256": "bd480ebabb544469e78d20e8486c85be553e5895701cab1b9ba8f1b30ba7ff79"
+    },
+    "tests/test_starter.py": {
+      "bytes": 15173,
+      "sha256": "0205fe09722161be8d8e4db34d9db98c1ba5ddb0ffb5076d09501af948f9cc2e"
+    }
+  },
+  "license": "MIT",
+  "source": "generic-core-and-adapted-collaboration-methods",
+  "version": "0.2.0-rc.3"
+}

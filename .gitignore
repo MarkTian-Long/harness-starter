@@ -1,0 +1,13 @@
+__pycache__/
+dist/
+.qa/
+*.pyc
+
+# Local data stays outside the public source repository.
+/private/
+/local/
+/machine-local/
+/owner-profile*.json
+/my-profile*.json
+/.env
+/.env.*

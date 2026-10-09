@@ -1,0 +1,50 @@
+name: Public core verification
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acceptance:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.11', '3.12']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONIOENCODING: utf-8
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Check out public source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify tracked public files and LF
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          import subprocess
+          expected = set(json.loads(Path('release-allowlist.json').read_text(encoding='utf-8')))
+          expected.add('release-manifest.json')
+          tracked = set(subprocess.check_output(['git', 'ls-files', '-z']).decode('utf-8').split('\0')) - {''}
+          if tracked != expected:
+              raise SystemExit('Tracked files differ from the exact public set')
+          if any(b'\r' in Path(name).read_bytes() for name in expected):
+              raise SystemExit('Public source must retain LF line endings')
+      - name: Run offline release acceptance
+        run: python -B tests/acceptance.py
+      - name: Verify tracked source remains unchanged
+        run: git diff --exit-code

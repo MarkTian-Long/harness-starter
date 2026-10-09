@@ -1,0 +1,2 @@
+# Keep public source and manifest bytes stable across Git checkouts.
+* text=auto eol=lf
