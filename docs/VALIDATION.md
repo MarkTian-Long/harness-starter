@@ -17,10 +17,13 @@
 基线 ZIP SHA-256：`35bca7949eba946d46aa317165f363a35d079bcb5e68b10d21eaef892d13152f`。
 这是 rc.2 的记录，不能直接当作 rc.3 已通过。rc.3 保持产品运行逻辑与模板不变，增加公开说明、贡献入口与 CI 定义。
 
-## 当前 RC：0.2.0-rc.3
+## 当前 RC：0.2.0-rc.4
+
+rc.4 完善 README 与架构说明，保持模板、CLI 命令和产品运行逻辑不变，仅递增发行版本登记。
+作者本机采用集合与公共发行分别管理，不因这次说明更新自动切换。
 
 当前版本的本地测试、具体环境、文件数与最终 ZIP 摘要记录在
-[对应预发行](https://github.com/MarkTian-Long/harness-starter/releases/tag/v0.2.0-rc.3)
+[对应预发行](https://github.com/MarkTian-Long/harness-starter/releases/tag/v0.2.0-rc.4)
 的 `public-validation.json` 附件中。发布者应在完成检查后附上实际结果，不用本文件替代它。
 
 仓库提供 Windows/Linux、Python 3.11/3.12 的

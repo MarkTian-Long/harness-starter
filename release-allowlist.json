@@ -8,6 +8,7 @@
   "VERSION",
   "docs/QA.md",
   "docs/VALIDATION.md",
+  "docs/architecture.md",
   "docs/migration.md",
   "docs/modules.md",
   "docs/provenance.md",

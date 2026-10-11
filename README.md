@@ -1,40 +1,37 @@
-# Harness：一套核心，每个人自己的配置
+# Harness：让 AI 协作有规则、有依据、能续接
 
-这是一个本地文件式 AI 协作套件，适合调研、写作、产品规划和需要中断续接的任务。
-默认采用作者提炼的协作风格、通用 SOP 和恢复记录；也能选择最简模式。
-Python 工具负责初始化与文件检查，实际任务由你选择的 Codex 或其他助手完成。
-需要 Python 3.11+；当前验证范围以 Windows 为主，具体结果见对应候选的验收记录。
+Harness 是一套本地文件式 AI 协作套件，把协作方式、任务目标、资料位置、验证与续接写成可检查的文件。
+它适合调研、写作、产品规划和多步开发，尤其适合需要跨对话继续、复用已有方法的工作。
+你选择的 Codex 或其他 AI 助手负责执行任务；本仓库提供通用方法、模板，以及只使用 Python 标准库的管理工具。
 
-当前版本为 0.2.0-rc.3，预发行候选（RC），用于试用、复核与反馈。
-公共源码：[MarkTian-Long/harness-starter](https://github.com/MarkTian-Long/harness-starter)。
-本版本附件：[v0.2.0-rc.3 Release](https://github.com/MarkTian-Long/harness-starter/releases/tag/v0.2.0-rc.3)。
-它不提供模型、账号、后台自动执行、全局安装器、双机同步或原位升级器。
+这套方法来自作者的个人 Harness 实践：先明确目标与完成条件，按需读取资料，用实际证据支持结论，
+中断时留下下一步，有价值的经验经审阅再成为可复用方法。公开包提炼这些通用部分，个人画像和项目资料独立保存。
 
-## 我该选什么？
+当前版本：**0.2.0-rc.4，预发行候选**。需要 Python 3.11+。
+[下载发行包](https://github.com/MarkTian-Long/harness-starter/releases/tag/v0.2.0-rc.4) ·
+[整体架构与能力边界](docs/architecture.md) · [验证记录](docs/VALIDATION.md)
 
-| 情况 | 操作 | 得到什么 |
+## 它能帮你做什么
+
+| 工作中的问题 | Harness 提供的做法 | 对应文件 |
 | --- | --- | --- |
-| 第一次使用，愿意沿用默认方式 | 默认初始化 | 协作风格、通用 SOP、任务与续接模板 |
-| 只想有个简单任务入口 | 初始化时加 --preset minimal | 基础协作规则、任务说明和资料目录 |
-| 已有自己的私人配置，或本人换电脑 | 初始化时加 --profile 指定文件 | 同一套核心，加自己的偏好和画像快照 |
-| 想改个性化内容 | 编辑 private/overlay.md 和可选 private/profile.md | 私人调整保留在本地；需要时单独导出 |
+| 每个新对话都要重复交代做法 | 一个短入口，按任务读取适用规则和个人调整 | `AGENTS.md`、`profile/style.md`、`private/` |
+| 任务不断展开，难以判断何时完成 | 明确本次目标、权威输入、完成条件和未完成项 | `task.md`、任务推进 SOP |
+| 调研结果与推断混在一起 | 核对来源、日期和直接证据，保留未知 | 研究与证据 SOP |
+| 文件和成果散在多处 | 确认唯一主位置，引用成熟项目的既有入口 | 资料归位 SOP、`workspace/` |
+| 中断后需要重新解释全部上下文 | 记录已有成果、证据位置和下一步 | `recovery/checkpoint.md` |
+| 改动或新工具难以评估 | 明确范围、验证、依赖与恢复办法 | 变更恢复、工具采用 SOP |
+| 经验积累变成大量重复规则 | 先形成小候选，经试用和审阅后更新主版本 | 收尾与经验沉淀 SOP |
 
-“默认”是协作方法，不是作者的个人身份，也不继承作者的操作授权。
-先读生成目录里的 FIRST_USE.md；默认风格可整体采用，无需填写一份长问卷。
-私人文件不是公开发布材料；不把密钥、业务原文、聊天或账号放进去。
+例如，一次公开资料调研可以从 `task.md` 的问题与完成条件开始，按研究 SOP 整理来源，
+将比较和建议放入正式成果位置；中断时留下检查点，结束时只提取有复用价值的方法候选。
+这些 Markdown 是供助手执行的协作约定，Python 程序检查文件和安装状态；实际研究质量仍需验收。
 
-## 从 ZIP 或源码开始
+## 五分钟开始
 
-- **使用发行 ZIP**：从本版本 Release 下载 `harness-starter-0.2.0-rc.3.zip`，核对附带摘要，解压到独立目录，在包含 starter.py 的目录运行下列命令。GitHub 自动生成的 Source code 附件属于源码快照。
-- **使用公共源码**：克隆本仓库并检出对应标签，进入包含 starter.py、VERSION 和 release-allowlist.json 的源码根目录；可以直接试用，也可以按文末命令构建 ZIP。
-
-```powershell
-git clone https://github.com/MarkTian-Long/harness-starter.git
-cd harness-starter
-git checkout v0.2.0-rc.3
-```
-
-示例把任务目录放在源码或解压目录旁，避免任务材料混入公开源目录。在 PowerShell 中运行：
+从 [当前 Release](https://github.com/MarkTian-Long/harness-starter/releases/tag/v0.2.0-rc.4)
+下载 `harness-starter-0.2.0-rc.4.zip`，核对附件中的 SHA-256，再解压。
+在包含 `starter.py` 的目录中，用 PowerShell 初始化一个独立的空目录：
 
 ```powershell
 New-Item -ItemType Directory ../my-harness
@@ -43,54 +40,92 @@ python -B starter.py init ../my-harness --apply
 python -B starter.py doctor ../my-harness
 ```
 
-初始化目标必须是新建的空目录。默认只预览，加 --apply 才写入。
-默认推荐模式已包含续接模板；最简模式需要时可加 --recovery。
-初始化不写入全局 Codex 配置，也不覆盖或原位升级既有安装。
+第一条 `init` 只预览，加 `--apply` 才写入。目标必须是已经存在的新空目录。
+默认使用推荐模式，包含协作风格、六份按需 SOP 和续接模板。
+想保留最少规则，可在两条 `init` 命令中都加 `--preset minimal`；需要检查点时再加 `--recovery`。
 
-把目标目录交给助手，复制这句话即可开始：
+把生成目录交给助手，用这句话开始：
 
-> 请先读这个目录的 AGENTS.md 和 FIRST_USE.md。默认采用推荐协作方式，帮助我把本次目标、输入和完成条件写进 task.md，再完成任务。只读取适用的 SOP；个人事实由我提供，工具权限按当前环境处理。中断时记录下一步。
+> 请先读这个目录的 AGENTS.md 和 FIRST_USE.md。帮助我把本次目标、输入和完成条件写进 task.md，再完成任务。只读取适用的 SOP；个人事实由我提供，工具权限按当前环境处理。中断时记录下一步。
 
-可选的离线工具示例：
+第一次先选一个能验收的小任务，例如根据三份公开材料输出一页比较建议并列来源。
+核对助手是否实际读取规则、结果是否准确，以及中断后能否继续。
+
+也可从源码开始：
 
 ```powershell
-python -B starter.py demo ../my-harness --apply
-python -B starter.py recover ../my-harness
+git clone https://github.com/MarkTian-Long/harness-starter.git
+cd harness-starter
+git checkout v0.2.0-rc.4
 ```
 
-示例结果为 count=3、total=10，只验证本地工具流程，不代表 AI 任务质量。
+任务目录放在源码或解压目录旁，避免把私人材料混入公共仓。
+GitHub 自动生成的 Source code 附件是源码快照；上述带版本号的 ZIP 是经清单核对的发行包。
 
-## 一套核心如何组织
+## 一套核心，分层保存
 
-| 文件或目录 | 作用 |
+公开核心维护通用协作方法；每个使用者单独保存偏好与画像；任务和项目拥有自己的资料与状态。
+机器路径、账号连接、Skills 和工具权限由当前运行环境管理。
+
+```mermaid
+flowchart LR
+    Core[公开核心：风格、SOP、模板] --> Init[starter.py 初始化]
+    Private[本人私人配置快照] --> Init
+    Init --> Entry[任务入口与本地文件]
+    Entry --> Assistant[AI 助手按需读取并执行]
+    Tools[当前环境的 Skills、MCP、插件] --> Assistant
+    Project[项目规则与权威材料] --> Assistant
+    Assistant --> Output[成果、验证与续接状态]
+```
+
+| 生成的文件或目录 | 职责 |
 | --- | --- |
-| AGENTS.md | 薄入口：按当前任务路由到适用资料 |
-| FIRST_USE.md | 首次选择、可以改什么、怎样开始 |
-| profile/style.md | 推荐协作风格；最简模式不装 |
-| standards/ | 按需使用的通用 SOP；最简模式不装 |
-| task.md | 当前任务的目标、权威输入和完成条件 |
-| workspace/ | 项目材料与成果，各项目保持自己的正式入口 |
-| personal/ | 与当前工作项目分开的个人实验 |
-| private/ | 自己的偏好和可选画像；始终保留、不公开 |
-| recovery/checkpoint.md | 当前进度、未完成项、下一步；不是全部聊天备份 |
+| `AGENTS.md` | 薄入口，按任务路由到适用资料 |
+| `FIRST_USE.md` | 首次选择、可修改内容和第一个真实任务 |
+| `profile/style.md` | 推荐协作风格与六类分析视角；最简模式不装 |
+| `standards/` | 六份按需 SOP；最简模式不装 |
+| `private/overlay.md` | 使用者的协作偏好；默认是空白模板 |
+| `private/profile.md` | 可选的本人背景与适用范围，需自行建立或明确导入 |
+| `task.md` | 当前任务的目标、输入、完成条件和状态 |
+| `workspace/`、`personal/` | 项目材料和独立个人实验的入口 |
+| `recovery/checkpoint.md` | 中断时的成果、未完成项、证据位置与下一步 |
+| `.starter-state.json` | 程序登记的版本、受管文件和初始摘要 |
 
-默认方法和私人调整不需要复制成第二套核心。现有成熟项目继续使用自己的规则，
-不要在项目里再建重复台账。详情见 [模块说明](docs/modules.md) 和 [迁移范围](docs/migration.md)。
+成熟项目继续使用自己的 `AGENTS.md`、规范、计划和状态入口；正式资料在原位引用，避免另建重复台账。
+推荐风格是可编辑的默认方式，不包含作者身份，也不继承作者的历史操作授权。
+更多职责和数据流见 [架构说明](docs/architecture.md)，预设差异见 [模块说明](docs/modules.md)。
+
+## 当前提供到哪一层
+
+| 能力 | 当前状态 |
+| --- | --- |
+| 推荐/最简初始化、预览后写入 | 公共 `starter.py` 已提供 |
+| 文件检查、续接入口、离线示例、退出保留 | 公共 `starter.py` 已提供 |
+| 本人偏好与画像的显式快照导出/导入 | 公共 `starter.py` 已提供，仅处理两份私人 Markdown |
+| 六份 SOP、分析视角、经验候选与审阅约定 | 公共 Markdown 已提供，由助手按需执行 |
+| 作者本机的用户级入口、固定个人读层、采用集合与备份管理 | 另行部署的本机接入；公开发行包未包含该管理器 |
+| 第三方 Skills、MCP、插件、模型和账号 | 沿用使用者当前环境，本仓库不捆绑实现或认证状态 |
+| 双机自动同步、冲突合并、经验自动晋升、完整记忆治理系统 | 当前公共包未提供 |
+
+作者本机可以把公共方法接到用户级入口，把已采用的偏好与画像放在 `.codex/profile/`，
+让各项目继续保留自己的资料。它与本仓库的“独立任务目录”是不同的接入方式；
+本机部署结构与尚待补齐的原机机制见 [架构说明](docs/architecture.md#作者本机的用户级接入)。
+这里只介绍已核对的职责，不把该部署示例当作公开包已有的全局安装命令。
 
 ## 本人换电脑：导出与导入私人配置
 
-在旧电脑编辑已初始化目录中的私人偏好和画像文件，然后从匹配版本的核心目录运行：
+在已初始化的目录里编辑 `private/overlay.md` 和可选的 `private/profile.md`，
+从匹配版本的核心目录运行：
 
 ```powershell
 python -B starter.py export-profile ../my-harness --output ../my-profile.json
 python -B starter.py export-profile ../my-harness --output ../my-profile.json --apply
 ```
 
-输出须是新文件，并放在任务目录之外；示例同时将它放在公共源码目录之外。
-它只收集 private/overlay.md 和可选的 private/profile.md，不收集任务、公司资料、
-Skills、账号、权限设置或聊天。输出是未加密的私人 JSON，只通过本人信任的方式传递。
+输出须是目标目录之外的新文件。它只收集上述两份 Markdown，不收集项目材料、Skills、
+账号、权限、聊天或原生记忆。JSON 未加密，只通过本人信任的方式传递。
 
-新电脑准备同一个公开发行包，把私人 JSON 单独放在包目录旁，再运行：
+新电脑准备同一版本核心，将私人 JSON 单独放在包目录旁，再运行：
 
 ```powershell
 New-Item -ItemType Directory ../my-harness
@@ -99,50 +134,53 @@ python -B starter.py init ../my-harness --profile ../my-profile.json --apply
 python -B starter.py doctor ../my-harness
 ```
 
-这是显式的快照导出/导入，不是双向同步、冲突合并或自动升级。
-导入不是自动确认画像事实，也不是授权；账号、运行时、路径和工具在新机核验。
-旧私人工具包是已有者的可选历史资产，普通新用户不需要它，详见 [迁移范围](docs/migration.md)。
-新机须让助手显式读取规则并完成一个真实小任务，才能判断实际可用。
+这是明确选择的一次快照导出/导入。两台电脑持续使用时，应审阅彼此的方法候选和偏好差异，
+再分别决定采用；项目资料各自保留。程序不执行双向同步或三方合并。
+导入后仍需核验事实、路径、依赖、账号与授权，详见 [迁移范围](docs/migration.md)。
 
 ## 检查、续接与退出
 
-doctor 检查文件可用性与发行状态，不判断正文正确性。正常修改不会让任务变成不可用；
-缺少必需文件、损坏状态或不安全路径会失败。recover 只在可用时给出续接入口。
+`doctor` 检查文件可用性、安装状态和模板差异，不判断正文正确性。
+正常编辑仍可续接；缺少必需文件、损坏状态或不安全路径会失败。
+`recover` 只在文件可用时提示读取任务和检查点，不恢复全部聊天。
 
 ```powershell
+python -B starter.py recover ../my-harness
+python -B starter.py demo ../my-harness --apply
 python -B starter.py uninstall ../my-harness
 python -B starter.py uninstall ../my-harness --apply
 ```
 
-rollback 是卸载初始安装的别名，不是历史版本恢复。只删除未修改的受管公共模板；
-private 下文件、你改过的文件和未登记文件全部保留，相应 .gitignore 保留。
-因此退出后目录可以非空。无服务、后台任务或全局配置需要撤销。
-不同发行的安装状态仍由对应旧发行管理；升级时保留旧目录，在新空目录试用。
+`demo` 的合成结果是 `count=3`、`total=10`，用于检查本地工具流程，不代表 AI 任务质量。
+卸载只删除未修改的受管公共文件；私人文件、修改过的文件和未登记文件保留。
+必要的 `.gitignore` 也保留，因此退出后目录可能非空。
 
-## 源码构建、验证与分发
+`rollback` 是卸载的别名，不是历史版本恢复。不同发行的安装状态由匹配的旧发行管理；
+本版没有原位升级器，升级时保留旧目录，在新空目录试用。
+初始化不修改全局 Codex 配置，不建立服务或后台任务。
 
-在保持清单一致的公共源码根目录运行：
+## 构建、验证与贡献
+
+在清单一致的公共源码根目录运行：
 
 ```powershell
 python -B release.py
 python -B tests/acceptance.py
 ```
 
-构建产物是 dist/harness-starter-0.2.0-rc.3.zip，以及包含 ZIP 摘要的 dist/release-manifest.json。
-acceptance 会在源码与 ZIP 解压目录运行同一组单测并验证文件生命周期；重复运行不算新增独立用例。
-修改源码后必须更新版本、精确清单与生成的内嵌 manifest，步骤见 [发行与回退](docs/release.md)。
+产物为 `dist/harness-starter-0.2.0-rc.4.zip` 和带 ZIP 摘要的 `dist/release-manifest.json`。
+验收在源码与 ZIP 解压目录运行同一组单测，重复执行不算新增独立用例。
+文档也在精确发行清单内；修改后须递增候选版本并重生内嵌清单，见 [发行与回退](docs/release.md)。
 
-公共仓库可发布 release-allowlist.json 列出的源码与生成的根 release-manifest.json；
-Release 附件使用 dist 中对应版本的 ZIP。不要上传整个历史主题目录、私人配置、任务实例或 .qa。
-MIT；第三方 Skills 实现不随公开包捆绑，见 [来源说明](docs/provenance.md)。
+GitHub Actions 验证 Windows/Linux、Python 3.11/3.12 的公共文件与 CLI；仅验收，不自动创建 Release。
+实际结果分别查看 [公开验证说明](docs/VALIDATION.md)、[Actions](https://github.com/MarkTian-Long/harness-starter/actions)
+和对应 Release 附件。文件与构建通过，不证明助手自动加载、第二台物理机器可用或真实任务收益。
 
-本版本仍为预发行。GitHub Actions 只运行验收，不自动创建 Release。
-本地与云端结果分别查看 [公开验证说明](docs/VALIDATION.md) 和对应提交的 Actions；定义工作流不代表已经通过。
-尚未据此确认新机助手自动加载、真实任务效果或其他操作系统支持。
-[验证范围](docs/QA.md) 说明测试覆盖；[权限与数据边界](docs/security.md) 说明限制。
+欢迎通过 [Issues](https://github.com/MarkTian-Long/harness-starter/issues) 提交脱敏样例，
+或按 [贡献说明](CONTRIBUTING.md) 改进通用方法。个人事实留在私人配置，项目内容留在项目中。
+MIT 适用于本公开范围；第三方 Skills 实现未捆绑，见 [来源说明](docs/provenance.md)。
 
-## 交流与改进
-
-欢迎通过 [Issues](https://github.com/MarkTian-Long/harness-starter/issues) 分享脱敏的失败样例或方法改进。
-通用经验经试用后回到公共核心，个人偏好与画像独立保管，项目资料留在各自项目；
-不要把机器路径、账号或业务原文作为示例提交。具体见 [贡献说明](CONTRIBUTING.md)。
+进一步阅读：[架构说明](docs/architecture.md) · [模块说明](docs/modules.md) ·
+[验证范围](docs/QA.md) · [权限与数据边界](docs/security.md) ·
+[作者的个人 Harness 实践](https://marktian-long.github.io/tools/blog/posts/personal-harness.html)。
+实践文章描述的完整个人体系范围更广，具体发布能力以本仓库和对应版本验证为准。
