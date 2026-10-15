@@ -7,8 +7,9 @@ Harness 是一套本地文件式 AI 协作套件，把协作方式、任务目�
 这套方法来自作者的个人 Harness 实践：先明确目标与完成条件，按需读取资料，用实际证据支持结论，
 中断时留下下一步，有价值的经验经审阅再成为可复用方法。公开包提炼这些通用部分，个人画像和项目资料独立保存。
 
-当前版本：**0.2.0-rc.4，预发行候选**。需要 Python 3.11+。
-[下载发行包](https://github.com/MarkTian-Long/harness-starter/releases/tag/v0.2.0-rc.4) ·
+当前源码：**0.2.0-rc.6，尚未发布 Release 的源码候选**。需要 Python 3.11+。
+最近已发布的发行包仍为 **0.2.0-rc.4**；本次更新不会覆盖该版本附件。
+[下载已发布 rc.4](https://github.com/MarkTian-Long/harness-starter/releases/tag/v0.2.0-rc.4) ·
 [整体架构与能力边界](docs/architecture.md) · [验证记录](docs/VALIDATION.md)
 
 ## 它能帮你做什么
@@ -29,7 +30,7 @@ Harness 是一套本地文件式 AI 协作套件，把协作方式、任务目�
 
 ## 五分钟开始
 
-从 [当前 Release](https://github.com/MarkTian-Long/harness-starter/releases/tag/v0.2.0-rc.4)
+从 [最近已发布 Release](https://github.com/MarkTian-Long/harness-starter/releases/tag/v0.2.0-rc.4)
 下载 `harness-starter-0.2.0-rc.4.zip`，核对附件中的 SHA-256，再解压。
 在包含 `starter.py` 的目录中，用 PowerShell 初始化一个独立的空目录：
 
@@ -64,8 +65,20 @@ GitHub 自动生成的 Source code 附件是源码快照；上述带版本号的
 
 ## 一套核心，分层保存
 
-公开核心维护通用协作方法；每个使用者单独保存偏好与画像；任务和项目拥有自己的资料与状态。
+公开核心维护薄入口、共同边界和基础 SOP；独立小件库提供按任务选择的 Skill、SOP、模板、图样或小脚本。
+每个使用者单独保存偏好与画像；任务和项目拥有自己的资料与状态。
 机器路径、账号连接、Skills 和工具权限由当前运行环境管理。
+
+| 你需要什么 | 从哪里取用 | 采用方式 |
+| --- | --- | --- |
+| 基础任务规则、文件生命周期、六份通用 SOP | 本仓库公开核心 | 选固定发行或源码提交，按预览初始化 |
+| 某个任务需要的独立方法或小工具 | [ai-workflow-kit 导航](https://github.com/MarkTian-Long/ai-workflow-kit) | 按用途选单项；采用时固定版本/提交，保留其依赖、许可和说明 |
+| 本人偏好、画像、机器或项目差异 | 自己的私人层及项目正式入口 | 独立审阅与维护，不随公开核心或小件包传递 |
+
+本候选已核对的小件入口为 [固定快照 13db403](https://github.com/MarkTian-Long/ai-workflow-kit/tree/13db4036c359188af37693bb34684c1556da2ffb)。
+`main` 用于浏览和发现更新，不作为可重复采用的版本标识。SOP 可以直接读；Skill 先按说明单项试用，
+需要安装时再处理对应目录和宿主支持，不整包安装，也不因为有链接就视为已采用。
+任务先查当前权威来源和已有本地方法；没有实际缺口时无需接入新小件。
 
 ```mermaid
 flowchart LR
@@ -73,6 +86,7 @@ flowchart LR
     Private[本人私人配置快照] --> Init
     Init --> Entry[任务入口与本地文件]
     Entry --> Assistant[AI 助手按需读取并执行]
+    Kit[独立小件：固定快照、单项审阅] --> Assistant
     Tools[当前环境的 Skills、MCP、插件] --> Assistant
     Project[项目规则与权威材料] --> Assistant
     Assistant --> Output[成果、验证与续接状态]
@@ -103,6 +117,7 @@ flowchart LR
 | 文件检查、续接入口、离线示例、退出保留 | 公共 `starter.py` 已提供 |
 | 本人偏好与画像的显式快照导出/导入 | 公共 `starter.py` 已提供，仅处理两份私人 Markdown |
 | 六份 SOP、分析视角、经验候选与审阅约定 | 公共 Markdown 已提供，由助手按需执行 |
+| 按真实任务定位已有方法、单项试用及效果复核 | 现有入口与 SOP 约定；不提供自动安装或新全局登记器 |
 | 作者本机的用户级入口、固定个人读层、采用集合与备份管理 | 另行部署的本机接入；公开发行包未包含该管理器 |
 | 第三方 Skills、MCP、插件、模型和账号 | 沿用使用者当前环境，本仓库不捆绑实现或认证状态 |
 | 双机自动同步、冲突合并、经验自动晋升、完整记忆治理系统 | 当前公共包未提供 |
@@ -168,7 +183,8 @@ python -B release.py
 python -B tests/acceptance.py
 ```
 
-产物为 `dist/harness-starter-0.2.0-rc.4.zip` 和带 ZIP 摘要的 `dist/release-manifest.json`。
+本源码候选产物为 `dist/harness-starter-0.2.0-rc.6.zip` 和带 ZIP 摘要的 `dist/release-manifest.json`；
+本地构建、源码提交和 Release 附件发布分别核验，不据构建成功宣称 rc.5 已发布。
 验收在源码与 ZIP 解压目录运行同一组单测，重复执行不算新增独立用例。
 文档也在精确发行清单内；修改后须递增候选版本并重生内嵌清单，见 [发行与回退](docs/release.md)。
 
