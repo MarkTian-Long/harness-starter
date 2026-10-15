@@ -1,3 +1,5 @@
+**中文** | [English](README.en.md)
+
 # Harness：让 AI 协作有规则、有依据、能续接
 
 Harness 是一套本地文件式 AI 协作套件，把协作方式、任务目标、资料位置、验证与续接写成可检查的文件。
@@ -7,8 +9,9 @@ Harness 是一套本地文件式 AI 协作套件，把协作方式、任务目�
 这套方法来自作者的个人 Harness 实践：先明确目标与完成条件，按需读取资料，用实际证据支持结论，
 中断时留下下一步，有价值的经验经审阅再成为可复用方法。公开包提炼这些通用部分，个人画像和项目资料独立保存。
 
-当前源码：**0.2.0-rc.6，尚未发布 Release 的源码候选**。需要 Python 3.11+。
+当前源码：**0.2.0-rc.7，尚未发布 Release 的源码候选**。需要 Python 3.11+。
 最近已发布的发行包仍为 **0.2.0-rc.4**；本次更新不会覆盖该版本附件。
+本首页提供中英文切换，详细指南与安装后的模板目前主要为中文。
 [下载已发布 rc.4](https://github.com/MarkTian-Long/harness-starter/releases/tag/v0.2.0-rc.4) ·
 [整体架构与能力边界](docs/architecture.md) · [验证记录](docs/VALIDATION.md)
 
@@ -183,8 +186,8 @@ python -B release.py
 python -B tests/acceptance.py
 ```
 
-本源码候选产物为 `dist/harness-starter-0.2.0-rc.6.zip` 和带 ZIP 摘要的 `dist/release-manifest.json`；
-本地构建、源码提交和 Release 附件发布分别核验，不据构建成功宣称 rc.5 已发布。
+本源码候选产物为 `dist/harness-starter-0.2.0-rc.7.zip` 和带 ZIP 摘要的 `dist/release-manifest.json`；
+本地构建、源码提交和 Release 附件发布分别核验，不据构建成功宣称本候选 Release 已发布。
 验收在源码与 ZIP 解压目录运行同一组单测，重复执行不算新增独立用例。
 文档也在精确发行清单内；修改后须递增候选版本并重生内嵌清单，见 [发行与回退](docs/release.md)。
 

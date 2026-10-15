@@ -20,25 +20,29 @@
       "bytes": 1085,
       "sha256": "b9c18afd3f7b67910fef3edf6575069f97ff7926a683a8410adb36eac61aa5c7"
     },
+    "README.en.md": {
+      "bytes": 15554,
+      "sha256": "a4184138a22a5bb1f172e1cb26da3860b86a48a8c3a96474db96dcd888783a0d"
+    },
     "README.md": {
-      "bytes": 12875,
-      "sha256": "6dcc6e415b4e2b499f7061f8bb56d585650370e72bffbc2d64c49a5cf21f10d5"
+      "bytes": 13016,
+      "sha256": "49d0e4ada48f86faa4f1a51636bc5b5f6cef238a53a5dfa0dbe4beb572c89349"
     },
     "VERSION": {
       "bytes": 11,
-      "sha256": "1a4e7d80fa376bfb18373396bff4ee783b1d8008d34c7884045581d3a514a867"
+      "sha256": "3d08cb4884c8f5b712a82758113cac51637b2ece18436653841a7ad1932e9efd"
     },
     "docs/QA.md": {
       "bytes": 2056,
       "sha256": "b5fecefca737bb125c051e8e76c072a900295f4f3bf817230ab2b2df2c3664f6"
     },
     "docs/VALIDATION.md": {
-      "bytes": 3650,
-      "sha256": "9c0447970db034f9939fa919cf77c458d99710521a54b54c043fbdb8d66a687c"
+      "bytes": 3763,
+      "sha256": "9b123a77900a56d3ef8eee2616f0fb392aef3fa469f7f7b72cc6a63d6405b662"
     },
     "docs/architecture.md": {
       "bytes": 14130,
-      "sha256": "b7991ed265c1e83134e77d352c1d73c926fef563dec611ce9e11e1e8ce148621"
+      "sha256": "2c8b5db9f72a0e9ca893d635b8c3551d294e2e5a9c6e2580165ffd248b439a74"
     },
     "docs/migration.md": {
       "bytes": 2620,
@@ -54,15 +58,15 @@
     },
     "docs/release.md": {
       "bytes": 7616,
-      "sha256": "73eebfb5ced82d374e2aabb016ef6c20951b47995869e33508bb9b72da7f77fa"
+      "sha256": "60109639369e7db570ec978a90cb6d48166d62e0218b5eb17f4cfa24f76ab275"
     },
     "docs/security.md": {
       "bytes": 1236,
       "sha256": "5600a37c7846d0a50cb222c56f424d9555d59002d3627f24c54c7363a28b4f50"
     },
     "release-allowlist.json": {
-      "bytes": 938,
-      "sha256": "fb4c6fa3fc38ee34aec8494c987c26511e72884141d690d4e4ce9c32df625fe5"
+      "bytes": 956,
+      "sha256": "c866b642726d8b46fa7868d3c1397398493acf273790627631a76e0e1083bfb8"
     },
     "release.py": {
       "bytes": 2965,
@@ -70,7 +74,7 @@
     },
     "starter.py": {
       "bytes": 16072,
-      "sha256": "aaa42303f28f8721ab3caf29f1aed153263ae71cdbc4358d362ecc97701c7601"
+      "sha256": "ada732a4ddc914fce0ce0edb643d634d96e6481403b45a67adff7668a3fe27c8"
     },
     "templates/.gitignore": {
       "bytes": 52,
@@ -143,5 +147,5 @@
   },
   "license": "MIT",
   "source": "generic-core-and-adapted-collaboration-methods",
-  "version": "0.2.0-rc.6"
+  "version": "0.2.0-rc.7"
 }
