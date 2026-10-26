@@ -21,44 +21,44 @@
       "sha256": "b9c18afd3f7b67910fef3edf6575069f97ff7926a683a8410adb36eac61aa5c7"
     },
     "README.en.md": {
-      "bytes": 15554,
-      "sha256": "a4184138a22a5bb1f172e1cb26da3860b86a48a8c3a96474db96dcd888783a0d"
+      "bytes": 15576,
+      "sha256": "d69d87d1d11f176fdbbd8acebb31c7d77df16dacde262e49c601cfca673a764b"
     },
     "README.md": {
-      "bytes": 13016,
-      "sha256": "49d0e4ada48f86faa4f1a51636bc5b5f6cef238a53a5dfa0dbe4beb572c89349"
+      "bytes": 12974,
+      "sha256": "8d3bfb3d4051c3c0f2d76e80b8cafbcc7e95aac439644fdd4ccc27a7f3aafe0c"
     },
     "VERSION": {
       "bytes": 11,
-      "sha256": "3d08cb4884c8f5b712a82758113cac51637b2ece18436653841a7ad1932e9efd"
+      "sha256": "6b181ad8b0e72108ee95a564fd28fec43fa497c1b38a2c8d8cf3d3f2d33a03eb"
     },
     "docs/QA.md": {
       "bytes": 2056,
       "sha256": "b5fecefca737bb125c051e8e76c072a900295f4f3bf817230ab2b2df2c3664f6"
     },
     "docs/VALIDATION.md": {
-      "bytes": 3763,
-      "sha256": "9b123a77900a56d3ef8eee2616f0fb392aef3fa469f7f7b72cc6a63d6405b662"
+      "bytes": 4221,
+      "sha256": "3ffb48516a2911a08f222953b206a9a23f0b9041d65149435b3743369c0c3f92"
     },
     "docs/architecture.md": {
-      "bytes": 14130,
-      "sha256": "2c8b5db9f72a0e9ca893d635b8c3551d294e2e5a9c6e2580165ffd248b439a74"
+      "bytes": 10328,
+      "sha256": "472e92786a330256194186dd8fa77c3906f263ee3536e92be51278735499b357"
     },
     "docs/migration.md": {
-      "bytes": 2620,
-      "sha256": "771640df8431affefcfcd6a395dad26d5c68e793f84d74b30edeea1c357ef89e"
+      "bytes": 2068,
+      "sha256": "719bfa19889998b04d7e98430e80f3b4a7230614aec010b93865b248342943d1"
     },
     "docs/modules.md": {
-      "bytes": 2394,
-      "sha256": "37c20f5b9b3194b9ea8259b94dc572de301394616bf49de21e57b1e696bf77f1"
+      "bytes": 2340,
+      "sha256": "0da312017e4bc650c9af4f40148f1a31ce1f357b4d1119fe46584c53d0558d1b"
     },
     "docs/provenance.md": {
-      "bytes": 3165,
-      "sha256": "de0be6e726240757c0c9a5386afa76e4b836f9cba2d73248f509b3cb5b3dad81"
+      "bytes": 3141,
+      "sha256": "3cf1f8735f19e8ca6da585754a44f7f3acc18c42403a4aa6b7d666115babe466"
     },
     "docs/release.md": {
       "bytes": 7616,
-      "sha256": "60109639369e7db570ec978a90cb6d48166d62e0218b5eb17f4cfa24f76ab275"
+      "sha256": "0fdc92b85b86fac89213656dfbe256dca4091703225bc0fa748e86724e4a4e1f"
     },
     "docs/security.md": {
       "bytes": 1236,
@@ -74,15 +74,15 @@
     },
     "starter.py": {
       "bytes": 16072,
-      "sha256": "ada732a4ddc914fce0ce0edb643d634d96e6481403b45a67adff7668a3fe27c8"
+      "sha256": "502145dc5a54ef2eb0f22441763a9b5f3549a7772558fd28771eeb04d0644162"
     },
     "templates/.gitignore": {
       "bytes": 52,
       "sha256": "a5eb5c485c7867d3fdf006d05e8aac2e1f66e05ff2cc7758232f7ac3406e2c91"
     },
     "templates/AGENTS.md": {
-      "bytes": 1902,
-      "sha256": "44c96a2f32ff17c6efc1a9da959d7406226242eacd58e12db0277ec5f5781a31"
+      "bytes": 2037,
+      "sha256": "b9ae21b65b955692a553dbf03536723c09fbd16b438a916b0d130b435d230b8f"
     },
     "templates/FIRST_USE.md": {
       "bytes": 2483,
@@ -105,12 +105,12 @@
       "sha256": "a0cf8bd9e2882eac09a91488c381f690b6b5bc328dae8ddc9eca360d7d494e79"
     },
     "templates/standards/change-recovery.md": {
-      "bytes": 1091,
-      "sha256": "e0477e1678be90cc416bc35fb69a2b0cdb7880c607588fc53a1f275936b38175"
+      "bytes": 1231,
+      "sha256": "ec71bc5652333cfd548b32fe02ab1db08610987f2caac9c6955042a7f532da50"
     },
     "templates/standards/closeout.md": {
-      "bytes": 1468,
-      "sha256": "eeb135ec91c792828b294fcc5196aa303f49958bd670b10afcff481d851d1985"
+      "bytes": 1819,
+      "sha256": "25e6223f3e05badcd6829c44f1c63cf7b0d0014d86920ee3a173f72783a11956"
     },
     "templates/standards/research-evidence.md": {
       "bytes": 1071,
@@ -121,8 +121,8 @@
       "sha256": "f51d68c8df392e51d5124fcf3c0b1ee0b2632197ccdd1b5b484e2b8e6c90071f"
     },
     "templates/standards/task-flow.md": {
-      "bytes": 1260,
-      "sha256": "44dd663a615d91b6211a20f4da66de9a7e772f96cf07a6b9b5ea4944c5f623d6"
+      "bytes": 1548,
+      "sha256": "568c71ef3903c6b8a539d37e699dcbc56422fcadabfb2dea7bbbf1d5930d1616"
     },
     "templates/standards/tool-adoption.md": {
       "bytes": 1949,
@@ -147,5 +147,5 @@
   },
   "license": "MIT",
   "source": "generic-core-and-adapted-collaboration-methods",
-  "version": "0.2.0-rc.7"
+  "version": "0.2.0-rc.9"
 }

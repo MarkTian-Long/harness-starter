@@ -7,7 +7,7 @@ from pathlib import Path, PurePosixPath, PureWindowsPath
 import stat
 import sys
 
-VERSION = "0.2.0-rc.7"
+VERSION = "0.2.0-rc.9"
 BASE = Path(__file__).absolute().parent
 STATE = ".starter-state.json"
 CORE = ["FIRST_USE.md", "AGENTS.md", ".gitignore", "workspace/README.md", "personal/README.md", "private/overlay.md", "task.md"]
